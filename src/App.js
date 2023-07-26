@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import RecipeNav from "./components/RecipeNav/RecipeNav";
+import Dinner from "./components/Dinner/Dinner";
 // import { useState } from "react";
 
 // const reel = "https://www.instagram.com/reel/CjxmT0oJkJH";
@@ -10,7 +11,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<RecipeNav />} />
+        <Route path="/" element={<Dinner />} />
+        {/* <Route path="/" element={<RecipeNav />} /> */}
       </Routes>
     </BrowserRouter>
   );
