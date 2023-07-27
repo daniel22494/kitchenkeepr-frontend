@@ -1,38 +1,18 @@
-// import axios from "axios";
+import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import RecipeNav from "./components/RecipeNav/RecipeNav";
 import Dinner from "./components/Dinner/Dinner";
-// import { useState } from "react";
-
-// const reel = "https://www.instagram.com/reel/CjxmT0oJkJH";
+import Tags from "./components/Tagged/Tagged";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dinner />} />
-        {/* <Route path="/" element={<RecipeNav />} /> */}
+        <Route path="/tags" element={<Tags />} />
       </Routes>
     </BrowserRouter>
   );
-  // const [caption, setCaption] = useState("");
-  // return (
-  //   <div className="App">
-  //     <div
-  //       className="wrapper"
-  //       onClick={() => {
-  //         axios.get(`http://localhost:8080/?url=${reel}`).then(({ data }) => {
-  //           setCaption(data.caption);
-  //         });
-  //       }}
-  //     >
-  //       <div className="overlay"></div>
-  //       <iframe src={`${reel}/embed/captioned`}></iframe>
-  //     </div>
-  //     {caption && <pre>{caption}</pre>}
-  //   </div>
-  // );
 }
 
 export default App;

@@ -22,10 +22,17 @@
   justify-content: center;
   text-align: center;
   &__frame{
-    margin: 1rem;
+    margin: 0.7rem;
     width: fit-content;
-    height: 25rem;
+    height: 26rem;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    &-content{
+      height: 23rem; 
+    }
+    &-button{
+      margin-top: 1rem;
+    }
   }
 }

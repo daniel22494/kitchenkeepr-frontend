@@ -34,18 +34,20 @@ function Dinner() {
               src={`${recipe.link}embed/captioned`}
               className="gallery__frame-content"
             ></iframe>
-            <button
-              onClick={() => {
-                axios
-                  .get(`http://localhost:8080/?url=${recipe.link}`)
-                  .then(({ data }) => {
-                    setCaption(data.caption);
-                  });
-              }}
-              className="gallery__frame-button"
-            >
-              KEEP
-            </button>
+            <div className="gallery__frame-button">
+              <button
+                onClick={() => {
+                  axios
+                    .get(`http://localhost:8080/?url=${recipe.link}`)
+                    .then(({ data }) => {
+                      setCaption(data.caption);
+                    });
+                }}
+                className="gallery__frame-button-content"
+              >
+                KEEP
+              </button>
+            </div>
           </div>
         );
       })}
