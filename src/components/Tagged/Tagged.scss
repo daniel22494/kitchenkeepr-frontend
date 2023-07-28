@@ -1,0 +1,22 @@
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    &__frame{
+      margin: 0.7rem;
+      width: fit-content;
+      height: 26rem;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      &-content{
+        height: 23rem;
+        border-radius: 10%;
+        box-shadow: 4px 4px ;
+      }
+      &-button{
+        margin-top: 1rem;
+      }
+    }
+  }
