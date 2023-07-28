@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Favourites.scss";
+import { Link } from "react-router-dom";
 
 function Favourites() {
   const [favs, setFavs] = useState(null);
@@ -22,7 +23,11 @@ function Favourites() {
       <h1>Favourites</h1>
       <ul>
         {favs.map((fav) => {
-          return <p key={fav.id}>{fav.title}</p>;
+          return (
+            <Link to={`/recipes/${fav.recipe_id}`}>
+              <p key={fav.id}>{fav.title}</p>
+            </Link>
+          );
         })}
       </ul>
     </div>
