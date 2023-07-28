@@ -31,10 +31,17 @@ function Dinner() {
             <div className="gallery__frame-button">
               <button
                 onClick={() => {
+                  // axios
+                  //   .get(`http://localhost:8080/?url=${recipe.link}`)
+                  //   .then(({ data }) => {
+                  //     setCaption(data.caption);
+                  //   });
                   axios
-                    .get(`http://localhost:8080/?url=${recipe.link}`)
+                    .post(`http://localhost:8080/favourites`, {
+                      id: recipe.id,
+                    })
                     .then(({ data }) => {
-                      setCaption(data.caption);
+                      console.log(data);
                     });
                 }}
                 className="gallery__frame-button-content"
