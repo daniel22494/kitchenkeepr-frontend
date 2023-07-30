@@ -1,0 +1,31 @@
+@use "../styles/typography" as *;
+
+//Colours
+$prim-blue-color: #246EB9;
+$prim-green-color: #4CB944;
+$prim-pale-color: #FDFFFC;
+
+$sec-yellow-color: #F5EE9E;
+$sec-black-color: #000000;
+$sec-orange-color: #F06543;
+
+// Base Fonts
+$avenir-base-font: 'Avenir Next';
+
+// Margin Spacing
+$mobile-spacing: 1rem;
+$tablet-spacing: 2.5rem;
+$desktop-spacing: 5.5rem;
+
+// Tablet Breakpoints
+@mixin tablet{
+    @media (min-width: 768px){
+        @content;
+    }
+}
+// Desktop Breakpoints
+@mixin desktop{
+    @media (min-width: 1280px){
+        @content;
+    }
+}
