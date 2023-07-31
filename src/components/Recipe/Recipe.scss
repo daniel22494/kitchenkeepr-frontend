@@ -3,17 +3,22 @@
 pre{
     white-space: break-spaces;
     font-family: $avenir-base-font;
+    line-height: 1.5rem;
 }
 
 .recipe-container{
     display: flex;
     justify-content: center;
+    @include tablet{
+    background-color: $prim-pale-color;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    }
 }
 
 .card{
     width: 90%;
-    // display: flex;
-    // flex-wrap: wrap;
+    background-color: white;
     &__title{
         display: flex;
         justify-content: center;
@@ -26,7 +31,6 @@ pre{
         }
     }
     &__text{
-        // width: 50%;
         font-size: small;
         &-author{
             background-color: $sec-rouge-color;
@@ -41,9 +45,49 @@ pre{
     &__iframe{
         &-content{
             height: 27rem;
+            border-radius: 20px;
         }
         &-src{
             font-size: 0.5rem;
+            color: $sec-orange-color;
+            text-align: center;
+        }
+    }
+    @include tablet{
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        border-radius: 20px;
+        &__text{
+            padding: 0 1rem;
+            width: 50%;
+        }
+        &__iframe{
+            &-content{
+                width: 20rem;
+                height: 31rem;
+            }
+        }
+    }
+    @include desktop{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        border-radius: 20px;
+        &__text{
+            padding: 0 3rem;
+            width: 50%;
+        }
+        &__iframe{
+            &-content{
+                width: 28rem;
+                height: 40rem;
+            }
+            &-src{
+                font-size: 0.8rem;
+            }
         }
     }
 }

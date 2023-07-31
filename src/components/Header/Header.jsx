@@ -10,7 +10,7 @@ function Header() {
           <h3 className="header-box__logo-text">KitchenKeepr</h3>
         </div>
         <div className="header-box__user">
-          <p className="header-box__user-name">Barbara B</p>
+          <p className="header-box__user-name">Barbara B.</p>
           <div className="header-box__user-picture"></div>
         </div>
       </div>
