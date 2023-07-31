@@ -1,0 +1,42 @@
+@use "../../styles/variables" as *;
+
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1rem;
+    font-family: $avenir-base-font;
+    background-color: $sec-rouge-color;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    @include tablet{
+        padding-left: 0;
+        justify-content: center;
+        // padding-bottom: 1.5rem;
+    }
+    @include desktop{
+        justify-content: space-around;
+    }
+}
+
+.download{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 15rem;
+    &__title{
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+    &__content{
+        width: 10rem;
+    }
+}
+
+.company{
+    width: 15rem;
+}
+
+.contact{
+    width: 15rem;
+}
