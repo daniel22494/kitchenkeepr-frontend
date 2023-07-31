@@ -19,10 +19,29 @@ function Recipe() {
   }
 
   return (
-    <div>
-      <h1>One Recipe</h1>
-      <ul>{recipeCard.title}</ul>
-    </div>
+    <section className="recipe-container">
+      <div className="card">
+        <div className="card__title">
+          <h4 className="card__title-content">{recipeCard.title}</h4>
+        </div>
+        <div className="card__text">
+          <h5 className="card__text-author">{recipeCard.author}</h5>
+        </div>
+        <div className="card__iframe">
+          <iframe
+            src={`${recipeCard.link}embed/captioned`}
+            className="card__iframe-content"
+          ></iframe>
+        </div>
+        <div className="card__src">
+          <h4 className="card__src-content">source: {recipeCard.link}</h4>
+        </div>
+      </div>
+    </section>
+    // <div>
+    //   <h1>One Recipe</h1>
+    //   <ul>{recipeCard.title}</ul>
+    // </div>
   );
 }
 
