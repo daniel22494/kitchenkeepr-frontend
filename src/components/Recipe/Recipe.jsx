@@ -11,6 +11,7 @@ function Recipe() {
     axios.get(`http://localhost:8080/recipes/${id}`).then(({ data }) => {
       setRecipeCard(data);
       console.log(data);
+      return data;
     });
   }, []);
 
@@ -25,23 +26,23 @@ function Recipe() {
           <h4 className="card__title-content">{recipeCard.title}</h4>
         </div>
         <div className="card__text">
-          <h5 className="card__text-author">{recipeCard.author}</h5>
+          <h5 className="card__text-author">Authour: {recipeCard.author}</h5>
+          <p className="card__text-caption">
+            <pre>{recipeCard.caption}</pre>
+          </p>
         </div>
         <div className="card__iframe">
           <iframe
             src={`${recipeCard.link}embed/captioned`}
             className="card__iframe-content"
           ></iframe>
+          <h4 className="card__iframe-src">source: {recipeCard.link}</h4>
         </div>
-        <div className="card__src">
+        {/* <div className="card__src">
           <h4 className="card__src-content">source: {recipeCard.link}</h4>
-        </div>
+        </div> */}
       </div>
     </section>
-    // <div>
-    //   <h1>One Recipe</h1>
-    //   <ul>{recipeCard.title}</ul>
-    // </div>
   );
 }
 

@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+
+pre{
+    white-space: break-spaces;
+    font-family: $avenir-base-font;
+}
+
+.recipe-container{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    width: 90%;
+    // display: flex;
+    // flex-wrap: wrap;
+    &__title{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        &-content{
+            color: white;
+            background-color: $sec-orange-color;
+            padding: 0.5rem;
+            border-radius: 20px;
+        }
+    }
+    &__text{
+        // width: 50%;
+        font-size: small;
+        &-author{
+            background-color: $sec-rouge-color;
+            width: fit-content;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+            margin-bottom: 1.7rem;
+        }
+    }
+    &__iframe{
+        &-content{
+            height: 27rem;
+        }
+        &-src{
+            font-size: 0.5rem;
+        }
+    }
+}
