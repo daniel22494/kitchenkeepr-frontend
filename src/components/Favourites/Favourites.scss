@@ -1,0 +1,50 @@
+@use "../../styles/variables" as *;
+
+ul{
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+
+.favourites{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: $prim-pale-color;
+    padding-top: 2rem;
+    justify-content: center;
+    padding-bottom: 2rem;
+    &__title{
+        background-color: $prim-green-color;
+        text-align: center;
+        width: 15rem;
+        border-radius: 2rem;
+        &-content{
+            color: white;
+        }
+    }
+    &__recipe{
+        justify-content: center;
+        &-content{
+            display: flex;
+            justify-content: center;
+            background-color: $prim-blue-color;
+            color: white;
+            width: 17rem;
+            padding: 0.5rem;
+            border-radius: 2rem;
+            font-weight: bold;
+        }
+    }
+    @include tablet{
+        &__title{
+            width: 18rem;
+        }
+        &__recipe{
+            &-content{
+                width: 25rem;
+            }
+        }
+    }
+}

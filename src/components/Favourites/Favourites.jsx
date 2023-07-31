@@ -19,18 +19,24 @@ function Favourites() {
   }
 
   return (
-    <div>
-      <h1>Favourites</h1>
+    <section className="favourites">
+      <div className="favourites__title">
+        <h1 className="favourites__title-content">Favourites!</h1>
+      </div>
       <ul>
         {favs.map((fav) => {
           return (
             <Link to={`/recipes/${fav.recipe_id}`}>
-              <p key={fav.id}>{fav.title}</p>
+              <div className="favourites__recipe">
+                <p className="favourites__recipe-content" key={fav.id}>
+                  {fav.title}
+                </p>
+              </div>
             </Link>
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 }
 
