@@ -1,0 +1,87 @@
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
+.header{
+    background-color: $prim-green-color;
+    display: flex;
+    justify-content: center;
+    font-family: $avenir-base-font;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    &-box{
+        &__logo{
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            &-icon{
+                width: 3rem;
+                color: white;
+            }
+            &-text{
+                font-size: 1.5rem;
+                margin: 1rem;
+            }
+        }
+        &__user{
+            display: none;
+        }
+    }
+    &__actions{
+        &-nav{
+            font-weight: bold;
+            color: $sec-yellow-color;
+            text-align: center;
+            margin: 0.8rem;
+        }
+        &-nav:hover{
+            border-bottom: 2px $sec-yellow-color solid;
+        }
+    }
+    @include tablet{
+        &-box{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+            &__logo{
+                margin-left: $tablet-spacing;
+            }
+            &__user{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: $tablet-spacing;
+                &-name{
+                    color: white;
+                }
+                &-picture{
+                    width: 2rem;
+                    height: 2rem;
+                    background-color: white;
+                    border-radius: 50%;
+                    margin: 0.5rem;
+                }
+            }
+        }
+        &__actions{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 90%;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+    }
+    @include desktop{
+        &-box{
+            &__logo{
+                margin-left: $desktop-spacing;
+            }
+            &__user{
+                margin-right: $desktop-spacing;
+            }
+        }
+    }
+}
