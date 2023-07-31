@@ -6,6 +6,7 @@ import Favourites from "./components/Favourites/Favourites";
 import Recipe from "./components/Recipe/Recipe";
 import IngredientReplacer from "./components/IngredientReplacer/IngredientReplacer";
 import Header from "./components/Header/Header";
+import Homepage from "./pages/Homepage/Homepage";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/favourites" element={<Favourites />} />
         <Route path="/recipes/:id" element={<Recipe />} />
         <Route path="/ingredient-replacer" element={<IngredientReplacer />} />
-        {/* <Route path="/header" element={<Header />} /> */}
+        <Route path="/homepage" element={<Homepage />} />
       </Routes>
     </BrowserRouter>
   );

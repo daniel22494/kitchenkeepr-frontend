@@ -1,0 +1,26 @@
+@use "../../styles/variables" as *;
+
+.hero{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: $avenir-base-font;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: $prim-pale-color;
+    &__text{
+        max-width: 27rem;
+        padding: 0 1rem;
+    }
+    &__img{
+        &-content{
+            width: 20rem;
+            height: 20rem;
+        }
+    }
+}
+.actions{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around
+}
