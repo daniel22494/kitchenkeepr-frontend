@@ -12,9 +12,9 @@ function IngredientReplacer() {
   const handleGenerateReplacements = async () => {
     try {
       const response = await axios.get(
-        `/api/generate-replacements/${userInput}`
+        `http://localhost:8080/api/generate-replacements/${userInput}`
       );
-      setIngredientReplacements(response.data.replacements);
+      setIngredientReplacements(<pre>{response.data.replacements}</pre>);
     } catch (error) {
       console.error("Error fetching ingredient replacements:", error);
       setIngredientReplacements("Failed to fetch ingredient replacements.");
@@ -23,11 +23,11 @@ function IngredientReplacer() {
 
   return (
     <div>
+      {ingredientReplacements && <p>{ingredientReplacements}</p>}
       <input type="text" value={userInput} onChange={handleInputChange} />
       <button onClick={handleGenerateReplacements}>
         Generate Replacements
       </button>
-      {ingredientReplacements && <p>{ingredientReplacements}</p>}
     </div>
   );
 }
