@@ -1,5 +1,6 @@
 import "./Homepage.scss";
 import Chef from "../../assets/images/chef-cooking.png";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   return (
@@ -20,8 +21,12 @@ function Homepage() {
           time
         </p>
         <div className="actions">
-          <button className="actions_button">Get Started</button>
-          <button className="actions_button">Replace Ingredient</button>
+          <Link to="/recipes">
+            <button className="actions_button">Get Started</button>
+          </Link>
+          <Link to="/ingredient-replacer">
+            <button className="actions_button">Replace Ingredient</button>
+          </Link>
         </div>
       </div>
       <div className="hero__img">
