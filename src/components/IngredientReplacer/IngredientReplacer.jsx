@@ -27,53 +27,15 @@ function IngredientReplacer() {
     }
   };
 
-  //Old code
-
-  // const handleGenerateReplacements = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       `http://localhost:8080/api/generate-replacements/${userInput}`
-  //     );
-  //     setIngredientReplacements(<pre>{response.data.replacements}</pre>);
-  //   } catch (error) {
-  //     console.error("Error fetching ingredient replacements:", error);
-  //     setIngredientReplacements("Failed to fetch ingredient replacements.");
-  //   }
-  // };
-
   return (
     <div className="ai-container">
-      {
-        isLoading ? (
-          // Loading state
-          <div className="loading">
-            <p>Loading...</p>
-          </div>
-        ) : ingredientReplacements ? (
-          // Render the ingredient replacements if available
-          <p>{ingredientReplacements}</p>
-        ) : (
-          // Placeholder component
-          <div className="placeholder">
-            <img src={Hat} alt="" className="placeholder__img" />
-          </div>
-        )
-
-        //Old Code
-
-        // (ingredientReplacements && <p>{ingredientReplacements}</p>) || (
-        //   <div className="placeholder">
-        //     <img src={Hat} alt="" className="placeholder__img" />
-        //   </div>
-        // )
-      }
-
       <div className="generate">
         <input
           className="generate__input"
           type="text"
           value={userInput}
           onChange={handleInputChange}
+          placeholder="Enter your ingredient"
         />
         <button
           className="generate__button"
@@ -82,6 +44,32 @@ function IngredientReplacer() {
           Generate Replacements
         </button>
       </div>
+
+      {isLoading ? (
+        // Loading state
+        <>
+          <div className="placeholder placeholder-load">
+            <div className="placeholder__img placeholder__img--load">
+              <div class="loader">
+                <div class="inner one"></div>
+                <div div class="inner two"></div>
+                <div class="inner three"></div>
+              </div>
+            </div>
+          </div>
+        </>
+      ) : ingredientReplacements ? (
+        // Render the ingredient replacements if available
+        <div className="replacement">
+          <h3 className="replacement__title">Potential Replacements:</h3>
+          <p className="replacement__text">{ingredientReplacements}</p>
+        </div>
+      ) : (
+        // Placeholder component
+        <div className="placeholder">
+          <img src={Hat} alt="" className="placeholder__img" />
+        </div>
+      )}
     </div>
   );
 }
