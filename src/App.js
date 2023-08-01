@@ -8,18 +8,20 @@ import IngredientReplacer from "./components/IngredientReplacer/IngredientReplac
 import Header from "./components/Header/Header";
 import Homepage from "./pages/Homepage/Homepage";
 import Footer from "./components/Footer/Footer";
+import About from "./pages/About/About";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Dinner />} />
-        <Route path="/tags" element={<Tags />} />
-        <Route path="/favourites" element={<Favourites />} />
+        <Route path="/" element={<Homepage />} />
+        <Route path="/recipes" element={<Dinner />} />
         <Route path="/recipes/:id" element={<Recipe />} />
+        <Route path="/categories" element={<Tags />} />
+        <Route path="/favourites" element={<Favourites />} />
         <Route path="/ingredient-replacer" element={<IngredientReplacer />} />
-        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
     </BrowserRouter>

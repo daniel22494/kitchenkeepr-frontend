@@ -1,0 +1,44 @@
+@use "../../styles/variables" as *;
+
+.about{
+    background-color: $sec-rouge-color;
+    color: white;
+    font-family: $avenir-base-font;
+    &__title{
+        display: flex;
+        justify-content: center;
+        font-family: cursive;
+        font-size: x-large;
+    }
+    &__mission{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        &-title{
+            width: 100%;
+            margin-left: $desktop-spacing;
+        }
+        &-content{
+            width: 80%;
+            line-height: 1.8rem;
+        }
+    }
+
+    &__developer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        &-title{
+            margin-left: $desktop-spacing;
+            width: 100%;
+        }
+        &-content{
+            line-height: 2rem;
+            width: 50%;
+        }
+        &-img{
+            margin: 3rem;
+            width: 18rem;
+        }
+    }
+}
