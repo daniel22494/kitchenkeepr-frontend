@@ -1,13 +1,9 @@
 @use "../../styles/typography" as *;
 @use "../../styles/variables" as *;
 
-a:active{
-    text-decoration: underline;
-  }
-  
 
 .header{
-    background-color: $prim-blue-color;
+    background-color: #233D4D;
     display: flex;
     justify-content: center;
     font-family: $avenir-base-font;
@@ -36,7 +32,7 @@ a:active{
     &__actions{
         &-nav{
             font-weight: bold;
-            color: $sec-yellow-color;
+            color: #FCCA46;
             text-align: center;
             margin: 0.8rem;
         }

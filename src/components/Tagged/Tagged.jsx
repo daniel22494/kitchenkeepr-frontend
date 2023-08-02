@@ -19,7 +19,7 @@ function Tags() {
 
   return (
     <div className="sort">
-      <h1 className="sort__title">Choose a Category:</h1>
+      <h1 className="sort__title">Choose a category</h1>
       <div className="sort__tags">
         {tags.map((tag) => {
           return (

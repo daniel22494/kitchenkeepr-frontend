@@ -1,7 +1,7 @@
 @use "../../styles/variables" as *;
 
 .gallery{
-  background-color: $prim-pale-color;
+  background-color: #A1C181;
   padding-top: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -17,10 +17,20 @@
     &-content{
       height: 23rem;
       border-radius: 10%;
-      box-shadow: 4px 4px orange;
+      // box-shadow: 4px 4px orange;
     }
     &-button{
       margin-top: 1rem;
+      &-content{
+        background-color: #FE7F2D;
+        color: white;
+        font-weight: bold;
+        border-radius: 2rem;
+        padding: 0.2rem;
+        font-size: small;
+        // border: none;
+        width: 5rem;
+      }
     }
   }
 }

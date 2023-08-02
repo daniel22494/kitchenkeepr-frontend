@@ -12,11 +12,11 @@ a{
     align-items: center;
     flex-direction: column;
     background-color: $prim-pale-color;
-    padding-top: 2rem;
+    padding-top: 3rem;
     justify-content: center;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     &__title{
-        background-color: $prim-green-color;
+        background-color: #233D4D;
         text-align: center;
         width: 15rem;
         border-radius: 2rem;
@@ -29,12 +29,13 @@ a{
         &-content{
             display: flex;
             justify-content: center;
-            background-color: $prim-blue-color;
+            background-color: #FE7F2D;
             color: white;
             width: 17rem;
             padding: 0.5rem;
             border-radius: 2rem;
             font-weight: bold;
+            margin: 1.5rem 0;
         }
     }
     @include tablet{
