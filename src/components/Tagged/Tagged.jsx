@@ -9,7 +9,7 @@ function Tags() {
   useEffect(() => {
     axios.get(`http://localhost:8080/tags`).then(({ data }) => {
       setTags(data);
-      console.log(data);
+      // console.log(data);
     });
   }, [recipes]);
 
@@ -27,11 +27,11 @@ function Tags() {
               className="sort__tags-item"
               key={tag.id}
               onClick={() => {
-                console.log(tag.id);
+                // console.log(tag.id);
                 axios
                   .get(`http://localhost:8080/taggedRecipes?tag_id=${tag.id}`)
                   .then(({ data }) => {
-                    console.log(data);
+                    // console.log(data);
                     setRecipes(data);
                   });
               }}
@@ -43,22 +43,6 @@ function Tags() {
       </div>
 
       <div className="gallery">
-        {/* {recipes &&
-          recipes.map((recipe) => {
-            return (
-              <div key={recipe.id} className="gallery__frame">
-                <iframe
-                  src={`${recipe.link}embed/captioned`}
-                  className="gallery__frame-content"
-                ></iframe>
-                <div className="gallery__frame-button">
-                  <button className="gallery__frame-button-content">
-                    KEEP
-                  </button>
-                </div>
-              </div>
-            );
-          })} */}
         {recipes.length > 0 ? (
           recipes.map((recipe) => (
             <div key={recipe.id} className="gallery__frame">
@@ -67,7 +51,28 @@ function Tags() {
                 className="gallery__frame-content"
               ></iframe>
               <div className="gallery__frame-button">
-                <button className="gallery__frame-button-content">KEEP</button>
+                <button
+                  onClick={() => {
+                    axios
+                      .post(`http://localhost:8080/favourites`, {
+                        id: recipe.id,
+                      })
+                      .then(({ data }) => {
+                        console.log(data);
+                        alert("Recipe added to favourites!");
+                      })
+                      .catch((error) => {
+                        if (error.response && error.response.status === 400) {
+                          alert("Recipe already added to favourites");
+                        } else {
+                          console.log(error);
+                        }
+                      });
+                  }}
+                  className="gallery__frame-button-content"
+                >
+                  KEEP
+                </button>
               </div>
             </div>
           ))

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Recipe.scss";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import Delete from "../../assets/icons/delete.png";
 import { Modal } from "@mui/material";
 
@@ -24,18 +24,31 @@ function Recipe() {
   const navigate = useNavigate();
 
   function handleDelete() {
+    // Assuming recipeCard contains the details of the recipe to be deleted
+    const recipeIdToDelete = recipeCard.id;
+
+    // Check if the recipe exists in favorites before attempting to delete it
     axios
-      .delete("http://localhost:8080/favourites", {
-        data: { recipe_id: recipeCard.id },
+      .get(`http://localhost:8080/favourites/${recipeIdToDelete}`)
+      .then((response) => {
+        // Recipe exists in favorites, show an alert and prevent the delete request
+        alert("Recipe is already in favorites.");
       })
-      .then(() => {
-        setOpen(false);
-        //Refresh the page. This allows us to see the new data.
-        alert("Recipe Deleted!");
-        navigate("/favourites");
-      })
-      .catch((response) => {
-        console.log(response);
+      .catch((error) => {
+        // If the recipe doesn't exist in favorites, proceed with the delete request
+        axios
+          .delete("http://localhost:8080/favourites", {
+            data: { recipe_id: recipeIdToDelete },
+          })
+          .then(() => {
+            setOpen(false);
+            // Refresh the page. This allows us to see the new data.
+            alert("Recipe Deleted!");
+            navigate("/favourites");
+          })
+          .catch((response) => {
+            console.log(response);
+          });
       });
   }
 
@@ -82,7 +95,9 @@ function Recipe() {
           <h4 className="card__iframe-src">source: {recipeCard.link}</h4>
         </div>
         <div className="replaceLink">
-          <button className="replaceLink-button">Replace Ingredient</button>
+          <Link to="/ingredient-replacer">
+            <button className="replaceLink-button">Replace Ingredient</button>
+          </Link>
         </div>
         <div className="delete">
           <img

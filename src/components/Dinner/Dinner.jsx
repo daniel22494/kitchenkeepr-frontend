@@ -9,7 +9,6 @@ function Dinner() {
 
   useEffect(() => {
     axios.get(`http://localhost:8080/recipes`).then(({ data }) => {
-      // setCaption(data.caption);
       setRecipes(data);
       console.log(data);
     });
@@ -31,17 +30,20 @@ function Dinner() {
             <div className="gallery__frame-button">
               <button
                 onClick={() => {
-                  // axios
-                  //   .get(`http://localhost:8080/?url=${recipe.link}`)
-                  //   .then(({ data }) => {
-                  //     setCaption(data.caption);
-                  //   });
                   axios
                     .post(`http://localhost:8080/favourites`, {
                       id: recipe.id,
                     })
                     .then(({ data }) => {
                       console.log(data);
+                      alert("Recipe added to favourites!");
+                    })
+                    .catch((error) => {
+                      if (error.response && error.response.status === 400) {
+                        alert("Recipe already added to favourites");
+                      } else {
+                        console.log(error);
+                      }
                     });
                 }}
                 className="gallery__frame-button-content"
