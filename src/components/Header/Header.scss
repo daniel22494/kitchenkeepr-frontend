@@ -1,6 +1,11 @@
 @use "../../styles/typography" as *;
 @use "../../styles/variables" as *;
 
+a:active{
+    text-decoration: underline;
+  }
+  
+
 .header{
     background-color: $prim-blue-color;
     display: flex;

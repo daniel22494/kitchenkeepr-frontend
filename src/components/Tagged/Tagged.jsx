@@ -18,12 +18,13 @@ function Tags() {
   }
 
   return (
-    <div>
-      <h1>Tags!!</h1>
-      <ul>
+    <div className="sort">
+      <h1 className="sort__title">Choose a Category:</h1>
+      <div className="sort__tags">
         {tags.map((tag) => {
           return (
-            <li
+            <p
+              className="sort__tags-item"
               key={tag.id}
               onClick={() => {
                 console.log(tag.id);
@@ -36,13 +37,30 @@ function Tags() {
               }}
             >
               {tag.tag}
-            </li>
+            </p>
           );
         })}
-      </ul>
+      </div>
+
       <div className="gallery">
-        {recipes.map((recipe) => {
-          return (
+        {/* {recipes &&
+          recipes.map((recipe) => {
+            return (
+              <div key={recipe.id} className="gallery__frame">
+                <iframe
+                  src={`${recipe.link}embed/captioned`}
+                  className="gallery__frame-content"
+                ></iframe>
+                <div className="gallery__frame-button">
+                  <button className="gallery__frame-button-content">
+                    KEEP
+                  </button>
+                </div>
+              </div>
+            );
+          })} */}
+        {recipes.length > 0 ? (
+          recipes.map((recipe) => (
             <div key={recipe.id} className="gallery__frame">
               <iframe
                 src={`${recipe.link}embed/captioned`}
@@ -52,8 +70,10 @@ function Tags() {
                 <button className="gallery__frame-button-content">KEEP</button>
               </div>
             </div>
-          );
-        })}
+          ))
+        ) : (
+          <div className="empty-categories"></div>
+        )}
       </div>
     </div>
   );

@@ -1,3 +1,38 @@
+@use "../../styles/variables" as *;
+
+.sort{
+  padding-top: 2rem;
+  &__title{
+    text-align: center;
+    @include tablet{
+      margin-left: $tablet-spacing;
+      text-align: start;
+      padding-bottom: 1rem;
+    }
+    @include desktop{
+      margin-left: $desktop-spacing;
+    }
+  }
+  &__tags{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    padding-bottom: 1.5rem;
+    // align-items: center;
+    &-item{
+      background-color: orange;
+      width: fit-content;
+      color: white;
+      padding: 0.5rem;
+      font-weight: bold;
+      border-radius: 2rem;
+    }
+  }
+}
+
 .gallery{
     display: flex;
     flex-wrap: wrap;
@@ -20,3 +55,7 @@
       }
     }
   }
+
+.empty-categories{
+  height: 35rem;
+}
