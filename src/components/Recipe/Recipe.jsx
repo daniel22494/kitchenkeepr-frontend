@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Recipe.scss";
 import { useParams } from "react-router-dom";
+import Delete from "../../assets/icons/delete.png";
 
 function Recipe() {
   const [recipeCard, setRecipeCard] = useState([]);
@@ -38,9 +39,12 @@ function Recipe() {
           ></iframe>
           <h4 className="card__iframe-src">source: {recipeCard.link}</h4>
         </div>
-        {/* <div className="card__src">
-          <h4 className="card__src-content">source: {recipeCard.link}</h4>
-        </div> */}
+        <div className="replaceLink">
+          <button className="replaceLink-button">Replace Ingredient</button>
+        </div>
+        <div className="delete">
+          <img src={Delete} alt="" className="delete-img" />
+        </div>
       </div>
     </section>
   );
