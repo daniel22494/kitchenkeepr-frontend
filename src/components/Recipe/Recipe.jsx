@@ -14,11 +14,13 @@ function Recipe() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/recipes/${id}`).then(({ data }) => {
-      setRecipeCard(data);
-      console.log(data);
-      return data;
-    });
+    axios
+      .get(`https://kitchenkeepr-d3710e35161a.herokuapp.com/recipes/${id}`)
+      .then(({ data }) => {
+        setRecipeCard(data);
+        console.log(data);
+        return data;
+      });
   }, []);
 
   const navigate = useNavigate();
@@ -29,7 +31,9 @@ function Recipe() {
 
     // Check if the recipe exists in favorites before attempting to delete it
     axios
-      .get(`http://localhost:8080/favourites/${recipeIdToDelete}`)
+      .get(
+        `https://kitchenkeepr-d3710e35161a.herokuapp.com/favourites/${recipeIdToDelete}`
+      )
       .then((response) => {
         // Recipe exists in favorites, show an alert and prevent the delete request
         alert("Recipe is already in favorites.");
@@ -37,9 +41,12 @@ function Recipe() {
       .catch((error) => {
         // If the recipe doesn't exist in favorites, proceed with the delete request
         axios
-          .delete("http://localhost:8080/favourites", {
-            data: { recipe_id: recipeIdToDelete },
-          })
+          .delete(
+            "https://kitchenkeepr-d3710e35161a.herokuapp.com/favourites",
+            {
+              data: { recipe_id: recipeIdToDelete },
+            }
+          )
           .then(() => {
             setOpen(false);
             // Refresh the page. This allows us to see the new data.

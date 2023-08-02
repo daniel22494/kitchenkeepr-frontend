@@ -16,7 +16,7 @@ function IngredientReplacer() {
     setIsLoading(true); // Set loading state to true before making the API call
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/generate-replacements/${userInput}`
+        `https://kitchenkeepr-d3710e35161a.herokuapp.com/api/generate-replacements/${userInput}`
       );
       setIngredientReplacements(<pre>{response.data.replacements}</pre>);
     } catch (error) {

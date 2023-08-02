@@ -8,10 +8,12 @@ function Favourites() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/favourites`).then(({ data }) => {
-      setFavs(data);
-      console.log(data);
-    });
+    axios
+      .get(`https://kitchenkeepr-d3710e35161a.herokuapp.com/favourites`)
+      .then(({ data }) => {
+        setFavs(data);
+        console.log(data);
+      });
   }, [recipes]);
 
   if (!favs) {

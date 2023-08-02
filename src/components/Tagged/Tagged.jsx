@@ -7,7 +7,7 @@ function Tags() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/tags`).then(({ data }) => {
+    axios.get(`/tags`).then(({ data }) => {
       setTags(data);
       // console.log(data);
     });
@@ -29,7 +29,9 @@ function Tags() {
               onClick={() => {
                 // console.log(tag.id);
                 axios
-                  .get(`http://localhost:8080/taggedRecipes?tag_id=${tag.id}`)
+                  .get(
+                    `https://kitchenkeepr-d3710e35161a.herokuapp.com/taggedRecipes?tag_id=${tag.id}`
+                  )
                   .then(({ data }) => {
                     // console.log(data);
                     setRecipes(data);

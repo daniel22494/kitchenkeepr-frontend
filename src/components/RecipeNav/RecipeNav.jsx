@@ -11,7 +11,7 @@ function RecipeNav() {
       <div
         className="wrapper"
         onClick={() => {
-          axios.get(`http://localhost:8080/?url=${reel}`).then(({ data }) => {
+          axios.get(`/?url=${reel}`).then(({ data }) => {
             setCaption(data.caption);
           });
         }}

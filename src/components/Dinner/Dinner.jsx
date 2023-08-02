@@ -8,10 +8,12 @@ function Dinner() {
   const [recipes, setRecipes] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/recipes`).then(({ data }) => {
-      setRecipes(data);
-      console.log(data);
-    });
+    axios
+      .get(`https://kitchenkeepr-d3710e35161a.herokuapp.com/recipes`)
+      .then(({ data }) => {
+        setRecipes(data);
+        console.log(data);
+      });
   }, []);
 
   if (!recipes) {
@@ -31,9 +33,12 @@ function Dinner() {
               <button
                 onClick={() => {
                   axios
-                    .post(`http://localhost:8080/favourites`, {
-                      id: recipe.id,
-                    })
+                    .post(
+                      `https://kitchenkeepr-d3710e35161a.herokuapp.com/favourites`,
+                      {
+                        id: recipe.id,
+                      }
+                    )
                     .then(({ data }) => {
                       console.log(data);
                       alert("Recipe added to favourites!");
