@@ -21,7 +21,7 @@ function Favourites() {
   return (
     <section className="favourites">
       <div className="favourites__title">
-        <h1 className="favourites__title-content">Favourites!</h1>
+        <h1 className="favourites__title-content">Favourites</h1>
       </div>
       <ul>
         {favs.map((fav) => {

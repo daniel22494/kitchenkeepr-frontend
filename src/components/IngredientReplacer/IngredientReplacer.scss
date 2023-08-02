@@ -48,10 +48,12 @@
         margin-bottom: 1rem;
         border-radius: 2rem;
         padding-left: 0.8rem;
+        height: 1.8rem;
     }
     &__button{
         margin: 1rem;
         border-radius: 2rem;
+        height: 2rem;
     }
 }
 
@@ -75,7 +77,7 @@
 }
 
 .placeholder__img--load{
-    height: 5rem;
+    height: 7.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
