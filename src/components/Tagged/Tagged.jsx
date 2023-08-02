@@ -56,9 +56,12 @@ function Tags() {
                 <button
                   onClick={() => {
                     axios
-                      .post(`http://localhost:8080/favourites`, {
-                        id: recipe.id,
-                      })
+                      .post(
+                        `https://kitchenkeepr-d3710e35161a.herokuapp.com/favourites`,
+                        {
+                          id: recipe.id,
+                        }
+                      )
                       .then(({ data }) => {
                         console.log(data);
                         alert("Recipe added to favourites!");
