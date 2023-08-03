@@ -44,27 +44,27 @@
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    &__frame{
-      margin: 0.9rem;
-      width: fit-content;
-      height: 26rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      &-content{
-        height: 23rem;
-        border-radius: 10%;
-        width: 98%;
-        box-shadow: 3px 3px #233D4D ;
-      }
-      &-button{
-        margin-top: 1rem;
-        // width: 3rem;
-        justify-content: center;
-        display: flex;
-        // width: 100%;
-      }
-    }
+    // &__frame{
+    //   margin: 0.9rem;
+    //   width: fit-content;
+    //   height: 26rem;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   &-content{
+    //     height: 23rem;
+    //     border-radius: 10%;
+    //     width: 98%;
+    //     box-shadow: 3px 3px #233D4D ;
+    //   }
+    //   &-button{
+    //     margin-top: 1rem;
+    //     // width: 3rem;
+    //     justify-content: center;
+    //     display: flex;
+    //     // width: 100%;
+    //   }
+    // }
   }
 
 .empty-categories{
