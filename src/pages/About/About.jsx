@@ -22,19 +22,26 @@ function About() {
       </div>
       <div className="about__developer">
         <h3 className="about__developer-title">Developer</h3>
-        <p className="about__developer-content">
-          Hello there! I'm thrilled to introduce you to KitchenKeepr, a project
-          close to my heart as it marks the culmination of my software bootcamp
-          journey. With my passion for cooking and technology, I've designed
-          this app using a powerful tech stack that includes React, Node.js,
-          Express, HTML, CSS, and JavaScript. To ensure smooth data handling,
-          I've implemented MySQL and Knex. And to make it easily accessible,
-          KitchenKeepr is hosted on Heroku. I want you to have an enjoyable
-          experience exploring countless easy web recipes and connecting with
-          fellow food enthusiasts. If you have any questions or just want to say
-          hi, feel free to reach out to me or connect with me on with links
-          below.
-        </p>
+        <div className="about__developer-text">
+          <p>
+            Hello there! I'm thrilled to introduce you to KitchenKeepr, a
+            project close to my heart as it marks the culmination of my software
+            bootcamp journey.
+          </p>
+          <p>
+            With my passion for cooking and technology, I've designed this app
+            using a powerful tech stack that includes React, Node.js, Express,
+            HTML, CSS, and JavaScript. To ensure smooth data handling, I've
+            implemented MySQL and Knex. And to make it easily accessible,
+            KitchenKeepr is hosted on Heroku.
+          </p>
+          <p>
+            I want you to have an enjoyable experience exploring countless easy
+            web recipes and connecting with fellow food enthusiasts. If you have
+            any questions or just want to say hi, feel free to reach out to me
+            or connect with me on with links below.
+          </p>
+        </div>
         <img
           src={Me}
           alt="Picture of the developer in a corn costume"

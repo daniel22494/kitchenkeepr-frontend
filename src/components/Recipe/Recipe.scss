@@ -4,6 +4,7 @@ pre{
     white-space: break-spaces;
     font-family: $avenir-base-font;
     line-height: 1.5rem;
+    color: black;
 }
 
 .recipe-container{
@@ -93,6 +94,7 @@ pre{
     }
 }
 
+
 .replaceLink{
     width: 100%;
     display: flex;
@@ -102,6 +104,9 @@ pre{
     &-button{
         border-radius: 2rem;
         padding: 0.4rem;
+        background-color: #233D4D;
+        color: white;
+        font-weight: bold;
     }
 }
 

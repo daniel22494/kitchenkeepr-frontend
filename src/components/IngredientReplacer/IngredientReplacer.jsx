@@ -13,7 +13,7 @@ function IngredientReplacer() {
   };
 
   const handleGenerateReplacements = async () => {
-    setIsLoading(true); // Set loading state to true before making the API call
+    setIsLoading(true);
     try {
       const response = await axios.get(
         `http://localhost:8080/api/generate-replacements/${userInput}`
@@ -23,7 +23,7 @@ function IngredientReplacer() {
       console.error("Error fetching ingredient replacements:", error);
       setIngredientReplacements("Failed to fetch ingredient replacements.");
     } finally {
-      setIsLoading(false); // Set loading state to false after the API call (whether successful or not)
+      setIsLoading(false);
     }
   };
 

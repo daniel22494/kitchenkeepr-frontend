@@ -4,11 +4,19 @@
     background-color: $sec-rouge-color;
     color: white;
     font-family: $avenir-base-font;
+    background-image: radial-gradient(circle farthest-corner at center, #b84e3e 0%, #b34141 100%);
+
     &__title{
+
         display: flex;
         justify-content: center;
         font-family: cursive;
         font-size: x-large;
+        background-image: radial-gradient(circle farthest-corner at center, #c1513f 0%, #b12626 100%);
+        &-content{
+            margin: 1rem 0;
+        }
+
     }
     &__mission{
         display: flex;
@@ -19,8 +27,11 @@
             margin-left: $desktop-spacing;
         }
         &-content{
-            width: 80%;
+            width: 87%;
             line-height: 1.8rem;
+        }
+        @include tablet{
+            padding-top: 2rem;
         }
     }
 
@@ -28,17 +39,36 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        // flex-direction: column;
         &-title{
             margin-left: $desktop-spacing;
             width: 100%;
         }
-        &-content{
+        &-text{
             line-height: 2rem;
-            width: 50%;
+            width: 87%;
         }
         &-img{
-            margin: 3rem;
-            width: 18rem;
+            margin: 0rem;
+            width: 16rem;
+            height: 21rem;
+            // margin-bottom: 3rem;
+            // margin-left: 3rem;
+        }
+        @include tablet{
+            &-text{
+                line-height: 2rem;
+                width: 45%;
+            }
+            &-img{
+                // margin: 0rem;
+                // width: 16rem;
+                // height: 21rem;
+                margin-bottom: 3rem;
+                margin-left: 3rem;
+            }
+            padding-bottom: 4rem;
+
         }
     }
 }

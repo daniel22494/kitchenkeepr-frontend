@@ -1,7 +1,7 @@
 @use "../../styles/variables" as *;
 
 .sort{
-  padding-top: 1rem;
+  padding-top: 3rem;
   background-color: #233D4D;
   &__title{
     margin-top: 0;
@@ -64,5 +64,5 @@
   }
 
 .empty-categories{
-  height: 35rem;
+  height: 28rem;
 }

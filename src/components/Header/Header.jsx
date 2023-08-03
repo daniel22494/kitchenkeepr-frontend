@@ -1,6 +1,7 @@
 import "./Header.scss";
 import Pot from "../../assets/icons/download.svg";
 import { Link } from "react-router-dom";
+import BB from "../../assets/images/BB.HEIC";
 
 function Header() {
   return (
@@ -12,13 +13,9 @@ function Header() {
             <h3 className="header-box__logo-text">KitchenKeepr</h3>
           </div>
         </Link>
-        {/* <div className="header-box__logo">
-          <img src={Pot} alt="" className="header-box__logo-icon" />
-          <h3 className="header-box__logo-text">KitchenKeepr</h3>
-        </div> */}
         <div className="header-box__user">
           <p className="header-box__user-name">Barbara B.</p>
-          <div className="header-box__user-picture"></div>
+          <img src={BB} className="header-box__user-picture" />
         </div>
       </div>
       <div className="header__actions">

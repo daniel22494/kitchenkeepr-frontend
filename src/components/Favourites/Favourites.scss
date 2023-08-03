@@ -17,6 +17,7 @@ a{
     padding-bottom: 4rem;
     &__title{
         background-color: #233D4D;
+        border: 1px solid black;
         text-align: center;
         width: 15rem;
         border-radius: 2rem;
@@ -36,6 +37,7 @@ a{
             border-radius: 2rem;
             font-weight: bold;
             margin: 1.5rem 0;
+            border: 1px solid black;
         }
     }
     @include tablet{
