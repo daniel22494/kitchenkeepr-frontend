@@ -1,6 +1,7 @@
 @use "../../styles/variables" as *;
 
 .footer{
+    border-top: 1px solid rosybrown;
     display: flex;
     flex-wrap: wrap;
     padding-left: 1rem;
@@ -39,4 +40,20 @@
 
 .contact{
     width: 15rem;
+}
+
+.links{
+    &__email{
+        text-decoration: none;
+    }
+    &__icons{
+        display: flex;
+        width: 8rem;
+        justify-content: space-between;
+
+    }
+}
+
+p{
+    color: white;
 }
