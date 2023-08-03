@@ -24,4 +24,14 @@
     margin-top: 2rem;
     display: flex;
     justify-content: space-around
+    &__button{
+        background-color: #FE7F2D;
+        color: white;
+        font-weight: bold;
+        border-radius: 2rem;
+        padding: 0.2rem;
+        font-size: small;
+        // border: none;
+        width: 5rem;
+    }
 }
