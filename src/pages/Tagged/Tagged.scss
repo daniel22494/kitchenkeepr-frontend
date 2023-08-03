@@ -45,7 +45,7 @@
     justify-content: center;
     text-align: center;
     &__frame{
-      margin: 0.7rem;
+      margin: 0.9rem;
       width: fit-content;
       height: 26rem;
       display: flex;
@@ -59,6 +59,8 @@
       &-button{
         margin-top: 1rem;
         // width: 3rem;
+        justify-content: center;
+        display: flex;
       }
     }
   }

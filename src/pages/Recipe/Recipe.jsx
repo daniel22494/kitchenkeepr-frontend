@@ -30,14 +30,14 @@ function Recipe() {
 
     // Check if the recipe exists in favorites before attempting to delete it
     axios
-      .get(`http://localhost:8080/favourites/${recipeIdToDelete}`)
+      .get(`${process.env.REACT_APP_API_URL}/favourites/${recipeIdToDelete}`)
       .then((response) => {
         alert("Recipe is already in favorites.");
       })
       .catch((error) => {
         // If the recipe doesn't exist in favorites, proceed with the delete request
         axios
-          .delete("http://localhost:8080/favourites", {
+          .delete(`${process.env.REACT_APP_API_URL}/favourites`, {
             data: { recipe_id: recipeIdToDelete },
           })
           .then(() => {
