@@ -49,11 +49,13 @@
       width: fit-content;
       height: 26rem;
       display: flex;
-      // flex-wrap: wrap;
+      flex-wrap: wrap;
       flex-direction: column;
+      justify-content: center;
       &-content{
         height: 23rem;
         border-radius: 10%;
+        width: 98%;
         box-shadow: 3px 3px #233D4D ;
       }
       &-button{
