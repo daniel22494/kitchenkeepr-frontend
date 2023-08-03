@@ -8,7 +8,7 @@ function Dinner() {
   const [recipes, setRecipes] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/recipes`).then(({ data }) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/recipes`).then(({ data }) => {
       setRecipes(data);
       console.log(data);
     });
@@ -31,7 +31,7 @@ function Dinner() {
               <button
                 onClick={() => {
                   axios
-                    .post(`http://localhost:8080/favourites`, {
+                    .post(`${process.env.REACT_APP_API_URL}/favourites`, {
                       id: recipe.id,
                     })
                     .then(({ data }) => {

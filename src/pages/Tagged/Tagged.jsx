@@ -7,7 +7,7 @@ function Tags() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/tags`).then(({ data }) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/tags`).then(({ data }) => {
       setTags(data);
       // console.log(data);
     });
@@ -29,7 +29,9 @@ function Tags() {
               onClick={() => {
                 // console.log(tag.id);
                 axios
-                  .get(`http://localhost:8080/taggedRecipes?tag_id=${tag.id}`)
+                  .get(
+                    `${process.env.REACT_APP_API_URL}/taggedRecipes?tag_id=${tag.id}`
+                  )
                   .then(({ data }) => {
                     // console.log(data);
                     setRecipes(data);
@@ -54,7 +56,7 @@ function Tags() {
                 <button
                   onClick={() => {
                     axios
-                      .post(`http://localhost:8080/favourites`, {
+                      .post(`${process.env.REACT_APP_API_URL}/favourites`, {
                         id: recipe.id,
                       })
                       .then(({ data }) => {

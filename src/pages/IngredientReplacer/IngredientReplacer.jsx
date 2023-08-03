@@ -16,7 +16,7 @@ function IngredientReplacer() {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/generate-replacements/${userInput}`
+        `${process.env.REACT_APP_API_URL}/api/generate-replacements/${userInput}`
       );
       setIngredientReplacements(<pre>{response.data.replacements}</pre>);
     } catch (error) {

@@ -14,11 +14,13 @@ function Recipe() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/recipes/${id}`).then(({ data }) => {
-      setRecipeCard(data);
-      console.log(data);
-      return data;
-    });
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/recipes/${id}`)
+      .then(({ data }) => {
+        setRecipeCard(data);
+        console.log(data);
+        return data;
+      });
   }, []);
 
   const navigate = useNavigate();
