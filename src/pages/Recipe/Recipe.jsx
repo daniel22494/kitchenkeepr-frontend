@@ -24,14 +24,12 @@ function Recipe() {
   const navigate = useNavigate();
 
   function handleDelete() {
-    // Assuming recipeCard contains the details of the recipe to be deleted
     const recipeIdToDelete = recipeCard.id;
 
     // Check if the recipe exists in favorites before attempting to delete it
     axios
       .get(`http://localhost:8080/favourites/${recipeIdToDelete}`)
       .then((response) => {
-        // Recipe exists in favorites, show an alert and prevent the delete request
         alert("Recipe is already in favorites.");
       })
       .catch((error) => {
@@ -42,7 +40,6 @@ function Recipe() {
           })
           .then(() => {
             setOpen(false);
-            // Refresh the page. This allows us to see the new data.
             alert("Recipe Deleted!");
             navigate("/favourites");
           })

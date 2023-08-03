@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Dinner from "./components/Dinner/Dinner";
-import Tags from "./components/Tagged/Tagged";
-import Favourites from "./components/Favourites/Favourites";
-import Recipe from "./components/Recipe/Recipe";
-import IngredientReplacer from "./components/IngredientReplacer/IngredientReplacer";
+import Dinner from "./pages/Dinner/Dinner";
+import Tags from "./pages/Tagged/Tagged";
+import Favourites from "./pages/Favourites/Favourites";
+import Recipe from "./pages/Recipe/Recipe";
+import IngredientReplacer from "./pages/IngredientReplacer/IngredientReplacer";
 import Header from "./components/Header/Header";
 import Homepage from "./pages/Homepage/Homepage";
 import Footer from "./components/Footer/Footer";
