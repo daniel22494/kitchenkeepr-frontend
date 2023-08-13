@@ -23,5 +23,16 @@
 .actions{
     margin-top: 2rem;
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+    // background-color: orange;
+    &_button{
+        background-color: #FE7F2D;
+        color: white;
+        font-weight: bold;
+        border-radius: 2rem;
+        padding: 0.5rem;
+        font-size: small;
+        // border: none;
+        width: fit-content;
+    }
 }
